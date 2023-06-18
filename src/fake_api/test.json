@@ -1,0 +1,196 @@
+[
+    {
+        "_id": "63e72bf1771ddf6cdb56a894",
+        "name": "Falguni Ahmed",
+        "email": "falguni@gmail.com",
+        "userType": "employer",
+        "role": "admin"
+    },
+    {
+        "_id": "63e732a7771ddf6cdb56a895",
+        "name": "Imran Khan",
+        "email": "imran@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "63e767586a6414a85dbbeee8",
+        "name": "Abdur Razzak",
+        "email": "razzak@gmail.com",
+        "userType": "employer",
+        "role": "admin"
+    },
+    {
+        "_id": "63e767ff6a6414a85dbbeeea",
+        "name": "Jahid hasan",
+        "email": "jahid@gmail.com",
+        "userType": "employer",
+        "address": null
+    },
+    {
+        "_id": "63f0ca1bdb7e9fc1fd09770f",
+        "name": "Md Salam",
+        "email": "salam@gmail.com",
+        "userType": "jobseeker",
+        "address": null
+    },
+    {
+        "_id": "63f1e46cbe7b540694e279c4",
+        "name": "Mohammad Karim",
+        "email": "karim@gmail.com",
+        "userType": "employer",
+        "address": null
+    },
+    {
+        "_id": "63f9e37a48504b8dc711092d",
+        "name": "Asaf Kollol",
+        "email": "kollol@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "63fb47be44886626d59f15d6",
+        "name": "Baburam Thanda",
+        "email": "baburam@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "640044aeb17851015558edbc",
+        "name": "imran",
+        "email": "imran22@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "64032e77eaeaad5808089385",
+        "name": "Mohammad Shamim",
+        "email": "shamim@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "640419bf697c8832267c6c1d",
+        "name": "Kumar Sanu",
+        "email": "sanu@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "64097b7fd40911cc15712d42",
+        "name": "Aslam Bhai",
+        "email": "aslam@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "64097bb3dd152b8827488ebb",
+        "name": "Naimul Hasan",
+        "email": "naimul@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "64097bdeac60747b151cb7ff",
+        "name": "Fata Kesto",
+        "email": "kesto@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "640980fa1565db55ab30da21",
+        "name": "Halima Begum",
+        "email": "halima@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "640984631565db55ab30da22",
+        "name": "Barak Obama",
+        "email": "barak@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "640ef5845e671c6b71a39739",
+        "name": "Dalim Kumar",
+        "email": "dalim@gmail.com",
+        "userType": "employer"
+    },
+    {
+        "_id": "640f036e5e671c6b71a3973b",
+        "name": "Tuhin Shuvra",
+        "email": "shuvra@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "640ff76b5f025af6ac44dc3b",
+        "name": "imran",
+        "email": "sardar@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "6411a68d41157fab1a3ecb55",
+        "name": "Bidhan Chandra",
+        "email": "bidhan@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "6412cf8d543d851102c0efba",
+        "name": "imran22",
+        "email": "imran002@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "6412e5957188a4b2f2e94cf6",
+        "name": "Palan Sarkar",
+        "email": "palan@gmail.com",
+        "userType": "Job Seeker"
+    },
+    {
+        "_id": "6412e78b7188a4b2f2e94cf7",
+        "name": "Tamim Ahmed",
+        "email": "tamim@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "6412e7df7188a4b2f2e94cf8",
+        "name": "Hamid Ansari",
+        "email": "hamid@gmail.com",
+        "userType": "jobseeker"
+    },
+    {
+        "_id": "6412e8157188a4b2f2e94cf9",
+        "name": "Fatema Begum",
+        "email": "fatema@gmail.com",
+        "userType": "employer"
+    },
+    {
+        "_id": "6423da6f0e2574d213c016e4"
+    },
+    {
+        "_id": "6423e6214790ade330e08c9e",
+        "Email": "nafi",
+        "UserType": "Job seeker",
+        "name": "Nafim Ahmed"
+    },
+    {
+        "_id": "6423e6434790ade330e08c9f",
+        "Email": "nafima@gmail.com",
+        "UserType": "Job seeker",
+        "name": "Nafim Ahmed"
+    },
+    {
+        "_id": "6423e70f60b7f2b209a3b834",
+        "Email": "reca@gmail.com",
+        "UserType": "Job seeker",
+        "name": "reca"
+    },
+    {
+        "_id": "642403aab9b9bac768d33f23",
+        "name": "Mohammad Fahim",
+        "email": "fahim@gmail.com",
+        "userType": "employer"
+    },
+    {
+        "_id": "64290fb1468901ea9c4b13f5",
+        "name": "Protiva Sarker",
+        "email": "protivasarker89@gmail.com",
+        "userType": "employer"
+    },
+    {
+        "_id": "6436434efbb3321b4147dcb2",
+        "name": "avijit",
+        "email": "avijit@gmail.com",
+        "userType": "employer"
+    }
+]

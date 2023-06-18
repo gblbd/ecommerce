@@ -1,0 +1,142 @@
+[
+    {
+        "id": "1",
+        "categoryId": "1",
+        "title": "Gorgeous Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240673558_4433601460038076_1068988359779146390_n.png"
+    },
+    {
+        "id": "2",
+        "categoryId": "1",
+        "title": "Fatafati Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240738220_4433601903371365_3423197069808180394_n.png"
+    },
+    {
+        "id": "3",
+        "categoryId": "1",
+        "title": "Sairam Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240776793_4433601550038067_1847271808648224784_n.png"
+    },
+    {
+        "id": "4",
+        "categoryId": "1",
+        "title": "Khub Valo Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240800087_4433601796704709_3338761425532068879_n.png"
+    },
+    {
+        "id": "5",
+        "categoryId": "1",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240809561_4433601860038036_3618463160641770744_n.png"
+    },
+    {
+        "id": "6",
+        "categoryId": "1",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240819667_4433601296704759_6865560766385293541_n.png"
+    },
+    {
+        "id": "7",
+        "categoryId": "1",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240820596_4433601323371423_3274069677133327561_n.png"
+    },
+    {
+        "id": "8",
+        "categoryId": "1",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240820596_4433601323371423_3274069677133327561_n.png"
+    },
+    {
+        "id": "9",
+        "categoryId": "1",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240824628_4433602026704686_886778635027231765_n.png"
+    },
+    {
+        "id": "10",
+        "categoryId": "1",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240824921_4433601413371414_1302392963996857361_n.png"
+    },
+    {
+        "id": "1",
+        "categoryId": "2",
+        "title": "Gorgeous Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240673558_4433601460038076_1068988359779146390_n.png"
+    },
+    {
+        "id": "2",
+        "categoryId": "2",
+        "title": "Fatafati Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240828724_4433601743371381_3655994713529063566_n.png"
+    },
+    {
+        "id": "3",
+        "categoryId": "2",
+        "title": "Sairam Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240837976_4433601986704690_8492582592531756670_n.png"
+    },
+    {
+        "id": "4",
+        "categoryId": "2",
+        "title": "Khub Valo Ring",
+        "price": "৳85000",
+        "img": "../assets/products/240673558_4433601460038076_1068988359779146390_n.png"
+    },
+    {
+        "id": "5",
+        "categoryId": "2",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240824628_4433602026704686_886778635027231765_n.png"
+    },
+    {
+        "id": "6",
+        "categoryId": "2",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240837976_4433601986704690_8492582592531756670_n.png"
+    },
+    {
+        "id": "7",
+        "categoryId": "2",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240837976_4433601986704690_8492582592531756670_n.png"
+    },
+    {
+        "id": "8",
+        "categoryId": "2",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240837976_4433601986704690_8492582592531756670_n.png"
+    },
+    {
+        "id": "9",
+        "categoryId": "2",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240837976_4433601986704690_8492582592531756670_n.png"
+    },
+    {
+        "id": "10",
+        "categoryId": "2",
+        "title": "Earrings",
+        "price": "৳85000",
+        "img": "../assets/products/240837976_4433601986704690_8492582592531756670_n.png"
+    }
+]

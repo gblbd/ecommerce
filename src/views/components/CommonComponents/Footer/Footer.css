@@ -1,0 +1,50 @@
+.footer_bg {
+    background-color: #98a80e;
+    margin-bottom: 0px;
+}
+
+.footer_logo {
+    width: 300px;
+
+}
+
+.appStore {
+    width: 135px;
+}
+
+.appStore:hover {
+    opacity: .5;
+}
+
+.footer_btn {
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 0;
+}
+
+.footer_btn:hover {
+    color: white;
+    background-color: rgba(153, 150, 150, 0.476);
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.copyright_text {
+    /* color: white */
+}
+
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+    /* .appStore {
+        width: 135px;
+    } */
+
+}
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+    .appStore {
+        width: 125px;
+    }
+
+}

@@ -1,0 +1,66 @@
+.logo {
+    width: 140px;
+}
+
+.chatIcons {
+    background-color: #edebeb;
+    color: black;
+    width: 30px;
+    height: 31px;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.startChat {
+    margin-top: 160px;
+}
+
+.showMsg {
+    background-color: rgb(244, 236, 219);
+    width: 253px;
+    padding: 8px;
+    border: 2px solid #d6d2d2;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1;
+}
+
+.loginShow {
+    background-color: wheat;
+    width: 370px;
+    height: 240px;
+    padding: 20px;
+    border: 2px;
+    border-radius: 22px;
+    position: fixed;
+    right: 72px;
+    bottom: 72px;
+    z-index: 1;
+}
+
+
+.messgengerIcon {
+    position: fixed;
+    width: 60px;
+    /* position: absolute; */
+    bottom: 0;
+    right: 18px;
+    z-index: 1;
+    background: white;
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.chatLoginArea {
+    position: fixed;
+    background-color: #fef9ef;
+    border: 2px solid #e3dcdc;
+    border-radius: 20px;
+    width: 370px;
+    height: 400px;
+    bottom: 72px;
+    right: 72px;
+    z-index: 1;
+    padding: 20px;
+}

@@ -1,0 +1,15 @@
+.cartProductImg {
+    width: 100px;
+    border-radius: 25%;
+}
+
+.productName {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: -2px;
+}
+
+.showDetails {
+    font-size: 15px;
+    margin-top: 0px;
+}
