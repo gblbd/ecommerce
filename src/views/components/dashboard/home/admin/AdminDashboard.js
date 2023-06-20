@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import "../../../Shared/dashboardShared/DashboardNav.css";
+import DashboardNavbar from "../../../Shared/dashboardShared/DashboardNavbar";
 import SidebarComponent from "../../../Shared/dashboardShared/SidebarComponent";
 import AdminDashboardHome from "./AdminDashboardHome/AdminDashboardHome";
 import AdminProfile from "./profile/AdminProfile";
@@ -17,12 +19,17 @@ const DashboardLinks = [
 ];
 const AdminDashboard = () => {
   return (
-    <div>
+    <div className="d-flex bg-lm">
       <SidebarComponent sidebarLinks={DashboardLinks} />
-      <Routes>
-        <Route index element={<AdminDashboardHome />} />
-        <Route path="admin-profile" element={<AdminProfile />} />
-      </Routes>
+      <div className="dashboard-header-content-container flex-grow-1">
+        <DashboardNavbar></DashboardNavbar>
+        <div className="main-body">
+          <Routes>
+            <Route index element={<AdminDashboardHome />} />
+            <Route path="admin-profile" element={<AdminProfile />} />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 };
