@@ -123,7 +123,6 @@
 }
 
 .dropdown-menu {
-  position: absolute;
   top: 40px;
   right: 0;
   background-color: #fff;
@@ -134,23 +133,23 @@
   transition: max-height 0.3s ease;
 }
 
+.dropdown-icon.open {
+  max-height: 120px; /* Adjust the height as needed */
+}
 .dropdown-menu.open {
   max-height: 120px; /* Adjust the height as needed */
 }
 
-.dropdown-menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.dropdown-menu .open ul {
+  list-style: none;
 }
 
-.dropdown-menu ul li {
-  padding: 8px 16px;
+.dropdown-menu .open ul li {
   cursor: pointer;
 }
 
-.dropdown-menu ul li:hover {
-  background-color: #f2f2f2;
+.dropdown-menu .open ul li:hover {
+  background-color: #efaaaa;
 }
 /* for smaller laptop desktop screens */
 @media screen and (min-width: 768px) and (max-width: 1400px) {

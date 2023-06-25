@@ -25,19 +25,19 @@ const SidebarComponent = ({ sidebarLinks }) => {
           </li>
           <li className="divider">Dashboard</li>
           <li>
-            <Link className="link" to="/dashboard/admin-profile">
+            <Link className="link" to="/dashboard/product-upload">
               <span className="icon bx">
                 <FaBeer />
               </span>
-              Profile
+              product upload
             </Link>
           </li>
           <li>
-            <Link className="link" to="/dashboard/admin-profile">
+            <Link className="link" to="/dashboard/product-list">
               <span className="icon bx">
                 <FaBeer />
               </span>
-              Profile
+              Product list
             </Link>
           </li>
           <li>

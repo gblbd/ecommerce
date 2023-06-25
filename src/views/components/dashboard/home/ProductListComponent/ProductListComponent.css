@@ -1,0 +1,65 @@
+.table-wrap {
+  margin: 80px auto;
+  overflow-x: auto;
+}
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  white-space: nowrap;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  padding: 15px;
+}
+table tbody tr:nth-child(odd) {
+  background: #e2e2e2;
+}
+.box-wrap {
+  padding: 0px 16px;
+}
+.form-group {
+  position: relative;
+  display: inline-block;
+}
+
+.form-group input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.bx-search {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Adjust the size and color of the search icon as needed */
+.bx-search svg {
+  width: 20px;
+  height: 20px;
+  fill: #ccc;
+}
+.button-add {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-add:hover {
+  background-color: #45a049;
+}
