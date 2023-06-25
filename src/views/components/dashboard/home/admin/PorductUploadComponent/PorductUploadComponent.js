@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { RiImageFill } from "react-icons/ri";
 import Select from "react-select";
 import "./PorductUploadComponent.css";
 const PorductUploadComponent = () => {
@@ -9,11 +10,24 @@ const PorductUploadComponent = () => {
   ];
   const [isClearable, setIsClearable] = useState(true);
   const [isSearchable, setIsSearchable] = useState(true);
+  const [imagePreview, setImagePreview] = useState(null);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setImagePreview(reader.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
   return (
     <div>
       <div className="container-form">
-        <form id="contact" action="" method="post">
-          <h3>product upload Form</h3>
+        <form id="contact">
           <h4>Add categorey</h4>
           <div className="form-inline">
             <div className="form-group">
@@ -27,7 +41,9 @@ const PorductUploadComponent = () => {
               Submit
             </button>
           </div>
-          <h2>Upload data</h2>
+        </form>
+        <form id="contact" action="" method="post">
+          <h3>product upload Form</h3>
           <fieldset>
             <input
               placeholder="product name"
@@ -70,6 +86,29 @@ const PorductUploadComponent = () => {
               tabindex="3"
               required
             />
+          </fieldset>
+          <fieldset>
+            <div className="d-flex">
+              <div>
+                <h2>Select Image</h2>
+                <input
+                  type="file"
+                  id="imageInput"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                />
+              </div>
+              <div>
+                <h2>Image Preview</h2>
+                <div id="imagePreview">
+                  {imagePreview ? (
+                    <img src={imagePreview} alt="Preview" />
+                  ) : (
+                    <RiImageFill className="icon-placeholder" />
+                  )}
+                </div>
+              </div>
+            </div>
           </fieldset>
 
           <fieldset>
