@@ -7,21 +7,35 @@ import {
 import { BiUser } from "react-icons/bi";
 import { BsHandbag, BsTelephoneFill } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogoImage from "../../../../assets/logo/logo.PNG";
-import { getLocalStorage } from "../../../../utilities/helper";
+import useAuth from "../../../../hooks/useAuth";
+import { getLocalStorage, signout } from "../../../../utilities/helper";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const { user, setUser, cartInfo, setCartInfo } = useAuth();
+  console.log("user", user);
   const getCartItemCount = () => {
     const productList = getLocalStorage("products");
     if (productList) {
-      return productList.reduce((total, product) => total + product.count, 0);
+      setCartInfo(
+        productList.reduce((total, product) => total + product.count, 0)
+      );
     }
     return 0;
   };
 
   const cartItemCount = getCartItemCount();
+
+  const navigate = useNavigate();
+  const logout = () => {
+    // setIsLoading(true);
+    signout(() => {
+      setUser("");
+      navigate("/login", { replace: true });
+    });
+  };
   return (
     <div className="navbg">
       <div className=" col-10 mx-auto">
@@ -76,19 +90,28 @@ const Navbar = () => {
                 <span className="ms-1"> Wish List</span>
               </Link>
 
-              <Link
-                to="/login"
-                className=" navBtnTop text-primary d-flex justify-content-center align-items-center"
-              >
-                <span className="ms-">Login</span>
-              </Link>
+              {user?._id ? (
+                <Link
+                  onClick={logout}
+                  className=" navBtnTop text-primary d-flex justify-content-center align-items-center"
+                >
+                  <span className="ms-">Log Out</span>
+                </Link>
+              ) : (
+                <Link
+                  to="/login"
+                  className=" navBtnTop text-primary d-flex justify-content-center align-items-center"
+                >
+                  <span className="ms-">Login</span>
+                </Link>
+              )}
             </div>
 
             <div className=" d-flex justify-content-lg-end justify-content-center my-2">
               <div className="navBtn text-primary d-flex justify-content-center align-items-center">
                 <AiOutlineShoppingCart className=" "></AiOutlineShoppingCart>
                 <Link to="/cart" className=" text-decoration-none ms-1 ">
-                  Cart {cartItemCount}
+                  Cart {cartInfo}
                 </Link>
               </div>
               <div className="navBtn text-primary mx-3 d-flex justify-content-center align-items-center">

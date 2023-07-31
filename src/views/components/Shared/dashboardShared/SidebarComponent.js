@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaBeer } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../../hooks/useAuth";
+import { signout } from "../../../../utilities/helper";
 import "./Sidebar.css";
 const SidebarComponent = ({ sidebarLinks }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  const { user, setUser, isLoading, setIsLoading } = useAuth();
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+  };
+  const navigate = useNavigate();
+  const logout = () => {
+    // setIsLoading(true);
+    signout(() => {
+      setUser("");
+      navigate("/login", { replace: true });
+    });
   };
   return (
     <>
@@ -89,6 +99,14 @@ const SidebarComponent = ({ sidebarLinks }) => {
                 <Link>option 1</Link>
               </li>
             </ul>
+          </li>
+          <li>
+            <button className="link" onClick={logout}>
+              <span className="icon bx">
+                <FaBeer />
+              </span>
+              LogOut
+            </button>
           </li>
         </ul>
 
