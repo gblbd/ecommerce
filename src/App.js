@@ -2,6 +2,7 @@ import { Toaster } from "react-hot-toast";
 // import './App.css';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AuthProvider from "./context/AuthProvider";
 import Footer from "./views/components/CommonComponents/Footer/Footer";
 import Navbar from "./views/components/CommonComponents/Header/Navbar";
 import HomeCategorySection from "./views/components/HomeComponents/HomeCategoryAndProductSection/HomeCategorySection/HomeCategorySection";
@@ -39,147 +40,149 @@ const DashboardLayout = ({ children }) => {
 };
 function App() {
   return (
-    <div className="ecommercebg">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <MainLayout>
-                <Home />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/signup"
-            element={
-              <MainLayout>
-                <Signup />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/login"
-            element={
-              <MainLayout>
-                <Login />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/services"
-            element={
-              <MainLayout>
-                <HomeServiceSection />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/about"
-            element={
-              <MainLayout>
-                <About />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/contact"
-            element={
-              <MainLayout>
-                <HomeContactSection />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/termsAndConditions"
-            element={
-              <MainLayout>
-                <TermsAndConditions />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/cookiesPolicy"
-            element={
-              <MainLayout>
-                <CookiesPolicy />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/products"
-            element={
-              <MainLayout>
-                <HomeCategorySection />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/category/:categoryId"
-            element={
-              <MainLayout>
-                <HomeProductsSection />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/checkout"
-            element={
-              <MainLayout>
-                <CheckOut />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/account"
-            element={
-              <MainLayout>
-                <Profile />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/cart"
-            element={
-              <MainLayout>
-                <Cart />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/wishList"
-            element={
-              <MainLayout>
-                <WishList />
-              </MainLayout>
-            }
-            exact
-          />
-          <Route
-            path="/dashboard/*"
-            element={
-              <DashboardLayout>
-                <DashboardHome />
-              </DashboardLayout>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-      <Toaster />
-    </div>
+    <AuthProvider>
+      <div className="ecommercebg">
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <MainLayout>
+                  <Home />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/signup"
+              element={
+                <MainLayout>
+                  <Signup />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/login"
+              element={
+                <MainLayout>
+                  <Login />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/services"
+              element={
+                <MainLayout>
+                  <HomeServiceSection />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/about"
+              element={
+                <MainLayout>
+                  <About />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/contact"
+              element={
+                <MainLayout>
+                  <HomeContactSection />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/termsAndConditions"
+              element={
+                <MainLayout>
+                  <TermsAndConditions />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/cookiesPolicy"
+              element={
+                <MainLayout>
+                  <CookiesPolicy />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/products"
+              element={
+                <MainLayout>
+                  <HomeCategorySection />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/category/:categoryId"
+              element={
+                <MainLayout>
+                  <HomeProductsSection />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/checkout"
+              element={
+                <MainLayout>
+                  <CheckOut />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/account"
+              element={
+                <MainLayout>
+                  <Profile />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/cart"
+              element={
+                <MainLayout>
+                  <Cart />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/wishList"
+              element={
+                <MainLayout>
+                  <WishList />
+                </MainLayout>
+              }
+              exact
+            />
+            <Route
+              path="/dashboard/*"
+              element={
+                <DashboardLayout>
+                  <DashboardHome />
+                </DashboardLayout>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+        <Toaster />
+      </div>
+    </AuthProvider>
   );
 }
 
