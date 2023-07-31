@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import DiamondRing from "../../../assets/products/jeweleryProduct_06.png";
+import useAuth from "../../../hooks/useAuth";
 import {
   getLocalStorage,
   removeLocalStorage,
@@ -10,12 +11,16 @@ import {
 import "./Cart.css";
 
 const Cart = () => {
+  const { user, setUser, cartInfo, setCartInfo, totalAmount, setTotalAmount } =
+    useAuth();
   const [cartList, setCartList] = useState([]);
-
+  console.log(" cartInfo", cartInfo);
   const getCartItemCount = () => {
     const productList = getLocalStorage("products");
     if (productList) {
-      return productList.reduce((total, product) => total + product.count, 0);
+      setCartInfo(
+        productList.reduce((total, product) => total + product.count, 0)
+      );
     }
     return 0;
   };
@@ -31,13 +36,14 @@ const Cart = () => {
   }, []);
   const handleRemoveProduct = (productId) => {
     const updatedCartList = cartList.filter(
-      (product) => product.id !== productId
+      (product) => product._id !== productId
     );
     setCartList(updatedCartList);
     // Update the localStorage with the updated product list
     setLocalStorage("products", updatedCartList);
     // Remove the product from localStorage
     removeLocalStorage(`product_${productId}`);
+    getCartItemCount();
   };
   const calculateCartSubTotal = () => {
     return cartList.reduce(
@@ -50,7 +56,7 @@ const Cart = () => {
 
   // Function to calculate the total cart amount including delivery charge (dummy value for example)
   const calculateTotalCartAmount = () => {
-    return cartSubTotal + 200; // Assuming a fixed delivery charge of 200 for example
+    return cartSubTotal;
   };
 
   const totalCartAmount = calculateTotalCartAmount();
@@ -78,7 +84,7 @@ const Cart = () => {
               </thead>
               <tbody>
                 {cartList.map((product, index) => (
-                  <tr key={product.id}>
+                  <tr key={product._id}>
                     <th scope="row">{index + 1}</th>
                     <td className="d-flex flex-column">
                       <Link to="/" className="text-decoration-none">
@@ -100,7 +106,7 @@ const Cart = () => {
                     <td>৳{product.price * product.count}</td>
                     <td>
                       <BsTrash
-                        onClick={() => handleRemoveProduct(product.id)}
+                        onClick={() => handleRemoveProduct(product._id)}
                       />
                     </td>
                   </tr>
@@ -141,6 +147,7 @@ const Cart = () => {
 
           <Link
             to="/checkout"
+            onClick={setTotalAmount(totalCartAmount)}
             className=" btn btn-primary rounded-4 w-100 fw-bold mt-3"
           >
             PROCEED TO CHECKOUT
