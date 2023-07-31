@@ -20,15 +20,21 @@ import Home from "./views/pages/Home/Home";
 import Profile from "./views/pages/Profile/Profile";
 import TermsAndConditions from "./views/pages/TermsAndConditions/TermsAndConditions";
 import WishList from "./views/pages/WishList/WishList";
+import ProductDetailsSection from "./views/components/HomeComponents/HomeCategoryAndProductSection/ProductDetailsSection/ProductDetailsSection";
+
+
 const MainLayout = ({ children }) => {
   return (
     <div className="container">
       <Navbar />
-      {children}
+      <div className=" min-vh-100">
+        {children}
+      </div>
       <Footer />
     </div>
   );
 };
+
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -38,6 +44,8 @@ const DashboardLayout = ({ children }) => {
     </div>
   );
 };
+
+
 function App() {
   return (
     <AuthProvider>
@@ -125,13 +133,12 @@ function App() {
               }
               exact
             />
-            <Route
-              path="/category/:categoryId"
-              element={
-                <MainLayout>
-                  <HomeProductsSection />
-                </MainLayout>
-              }
+            <Route path="/category/:categoryId"
+              element={<MainLayout> <HomeProductsSection /> </MainLayout>}
+              exact
+            />
+            <Route path="/productsDetails/:productId"
+              element={<MainLayout> <ProductDetailsSection /> </MainLayout>}
               exact
             />
             <Route
