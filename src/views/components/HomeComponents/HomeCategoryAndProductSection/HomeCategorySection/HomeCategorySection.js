@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GiBigDiamondRing } from 'react-icons/gi';
 import ProductList from '../../../../../fake_api/ProductList';
 import Buttons from '../HomeProductSection/Buttons';
@@ -7,6 +7,20 @@ import './HomeCategorySection.css';
 import ButtonsOverProducts from '../HomeProductSection/ButtonsOverProducts';
 
 const HomeCategorySection = () => {
+
+    const [products, setProducts] = useState(['']);
+
+    console.log("All Products :", products);
+
+    useEffect(() => {
+        fetch("../../../../../fake_api/product_list.json")
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+                // console.log("All Product Data :", data);
+            })
+    }, [])
+
     const newProductDisplay = ProductList.slice(0, 8);
     const [items, setItems] = useState(newProductDisplay);
 
