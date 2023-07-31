@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../../../../../hooks/useAuth";
 import {
   getLocalStorage,
   setLocalStorage,
 } from "../../../../../utilities/helper";
 import "./ProductDisplay.css";
-
 const ProductDisplay = ({ items }) => {
   const [productList, setProductList] = useState([]);
   const { user, setUser, cartInfo, setCartInfo } = useAuth();
+  const notify = () => toast("Added in cart!");
+  const notify2 = () => toast("Added in wishlist!");
 
   console.log(" cartInfo", cartInfo);
   const getCartItemCount = () => {
@@ -31,8 +34,10 @@ const ProductDisplay = ({ items }) => {
         p._id === product._id ? { ...p, count: p.count + 1 } : p
       );
       setProductList(updatedProductList);
+      notify();
     } else {
       // Product does not exist, add it to the list with count 1
+      notify();
       setProductList([...productList, { ...product, count: 1 }]);
     }
   };
@@ -42,36 +47,38 @@ const ProductDisplay = ({ items }) => {
     setLocalStorage("products", productList);
     getCartItemCount();
   }, [productList]);
-
+  const [wishlist, setWishlist] = useState([]);
+  const isProductInWishlist = (productId) => {
+    return wishlist.some((p) => p._id === productId);
+  };
   const handleWishlist = (product) => {
-    console.log("click");
-    // Get existing wishlist from local storage or initialize an empty array
-    const existingWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const existingWishlist = [...wishlist];
 
-    // Check if the product is already in the wishlist
     const isProductInWishlist = existingWishlist.some(
       (p) => p._id === product._id
     );
-
     let updatedWishlist;
-
     if (isProductInWishlist) {
       // If the product is already in the wishlist, remove it
       updatedWishlist = existingWishlist.filter((p) => p._id !== product._id);
+      setWishlist(updatedWishlist);
+      notify2();
     } else {
       // If the product is not in the wishlist, add it to the wishlist array
       updatedWishlist = [...existingWishlist, product];
+      setWishlist(updatedWishlist);
+      notify2();
     }
 
     // Update the local storage with the updated wishlist
     setLocalStorage("wishlist", updatedWishlist);
-    console.log("updatedWishlist:x:::", updatedWishlist);
   };
 
   console.log("productList", productList);
 
   return (
     <div className="col-lg-10 mx-auto">
+      <ToastContainer />
       <div className="row">
         <div className="product my-3">
           {items.map((product) => {
@@ -91,7 +98,11 @@ const ProductDisplay = ({ items }) => {
                         {product.title}
                       </p>
                       <FaRegHeart
-                        className=" text-secondary"
+                        className={
+                          isProductInWishlist(product._id)
+                            ? "text-red"
+                            : "text-secondary"
+                        }
                         onClick={() => handleWishlist(product)}
                       ></FaRegHeart>
                     </div>

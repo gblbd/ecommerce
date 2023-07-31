@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../../../hooks/useAuth";
 import { getLocalStorage, setLocalStorage } from "../../../utilities/helper";
 import "./WishList.css";
-
 const WishList = () => {
   // Get the wishlist from local storage
   const wishlist = getLocalStorage("wishlist") || [];
+  const notify = () => toast("added in cart!");
   const { user, setUser, cartInfo, setCartInfo } = useAuth();
   const getCartItemCount = () => {
     const productList = getLocalStorage("products");
@@ -27,9 +29,11 @@ const WishList = () => {
         p._id === product._id ? { ...p, count: p.count + 1 } : p
       );
       setProductList(updatedProductList);
+      notify();
     } else {
       // Product does not exist, add it to the list with count 1
       setProductList([...productList, { ...product, count: 1 }]);
+      notify();
     }
   };
   React.useEffect(() => {
@@ -38,6 +42,7 @@ const WishList = () => {
   }, [productList]);
   return (
     <div className="col-10 mx-auto my-4">
+      <ToastContainer />
       <h3 className="text-center fw-bold">Your Favorite Jewelry</h3>
       <table className="table table-hover table-bordered text-center">
         <thead>

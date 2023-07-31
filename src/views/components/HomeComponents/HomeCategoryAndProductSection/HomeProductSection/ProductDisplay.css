@@ -1,97 +1,99 @@
 .product {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .productImg {
-    position: relative;
-    width: 187px;
+  position: relative;
+  width: 187px;
 }
 
 .productImg:hover {
-    box-shadow: 0px 2px 7px 3px #8888
+  box-shadow: 0px 2px 7px 3px #8888;
 }
 
 .productTitle {
-    font-size: 16px;
+  font-size: 16px;
 }
 
-
-
+.text-red {
+  color: red;
+}
 /* Break Points for responsive view */
 
-@media (min-width: 1440px) and (max-width: 2559.98px) {}
+@media (min-width: 1440px) and (max-width: 2559.98px) {
+}
 
 @media (min-width: 1024px) and (max-width: 1199.98px) {
-    .productImg {
-        position: relative;
-        width: 150px;
-    }
+  .productImg {
+    position: relative;
+    width: 150px;
+  }
 
-    .productTitle {
-        font-size: 13px;
-    }
+  .productTitle {
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1023.98px) {
-    .productImg {
-        position: relative;
-        width: 150px;
-    }
+  .productImg {
+    position: relative;
+    width: 150px;
+  }
 
-    .productTitle {
-        font-size: 16px;
-    }
+  .productTitle {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .product {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
+  .product {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
 
-    .productImg {
-        position: relative;
-        width: 120px;
-    }
+  .productImg {
+    position: relative;
+    width: 120px;
+  }
 
-    .productTitle {
-        font-size: 12px;
-    }
+  .productTitle {
+    font-size: 12px;
+  }
 }
 
 @media (min-width: 425px) and (max-width: 767.98px) {
-    .product {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+  .product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 
-    .productImg {
-        position: relative;
-        width: 166px;
-    }
+  .productImg {
+    position: relative;
+    width: 166px;
+  }
 
-    .productTitle {
-        font-size: 13px;
-    }
+  .productTitle {
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 424.98px) {
-    .product {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+  .product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 
-    .productImg {
-        position: relative;
-        width: 130px;
-    }
+  .productImg {
+    position: relative;
+    width: 130px;
+  }
 
-    .productTitle {
-        font-size: 12px;
-    }
+  .productTitle {
+    font-size: 12px;
+  }
 }

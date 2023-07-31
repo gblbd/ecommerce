@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  AiOutlineHeart,
-  AiOutlineHome,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
 import { BsHandbag, BsTelephoneFill } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
@@ -64,7 +60,7 @@ const Navbar = () => {
 
           <div className=" d-md-flex justify-content-between d-lg-inline ">
             <div className=" d-flex justify-content-between align-items-center">
-              <Link
+              {/*  <Link
                 to="/"
                 className="navBtnTop text-primary d-flex justify-content-center align-items-center "
                 aria-current="page"
@@ -72,7 +68,7 @@ const Navbar = () => {
               >
                 <AiOutlineHome className=""></AiOutlineHome>{" "}
                 <span className="ms-1"> Home</span>
-              </Link>
+              </Link> */}
 
               <Link
                 to="/account"
