@@ -42,7 +42,34 @@ const ProductDisplay = ({ items }) => {
     setLocalStorage("products", productList);
     getCartItemCount();
   }, [productList]);
+
+  const handleWishlist = (product) => {
+    console.log("click");
+    // Get existing wishlist from local storage or initialize an empty array
+    const existingWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    // Check if the product is already in the wishlist
+    const isProductInWishlist = existingWishlist.some(
+      (p) => p._id === product._id
+    );
+
+    let updatedWishlist;
+
+    if (isProductInWishlist) {
+      // If the product is already in the wishlist, remove it
+      updatedWishlist = existingWishlist.filter((p) => p._id !== product._id);
+    } else {
+      // If the product is not in the wishlist, add it to the wishlist array
+      updatedWishlist = [...existingWishlist, product];
+    }
+
+    // Update the local storage with the updated wishlist
+    setLocalStorage("wishlist", updatedWishlist);
+    console.log("updatedWishlist:x:::", updatedWishlist);
+  };
+
   console.log("productList", productList);
+
   return (
     <div className="col-lg-10 mx-auto">
       <div className="row">
@@ -63,7 +90,10 @@ const ProductDisplay = ({ items }) => {
                       <p className="productTitle m-0 fw-bold">
                         {product.title}
                       </p>
-                      <FaRegHeart className=" text-secondary"></FaRegHeart>
+                      <FaRegHeart
+                        className=" text-secondary"
+                        onClick={() => handleWishlist(product)}
+                      ></FaRegHeart>
                     </div>
                     <p className="productTitle m-0 fw-bold">{product.price}</p>
                   </div>
