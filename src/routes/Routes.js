@@ -1,5 +1,6 @@
 import HomeCategorySection from "../views/components/HomeComponents/HomeCategoryAndProductSection/HomeCategorySection/HomeCategorySection";
 import HomeProductsSection from "../views/components/HomeComponents/HomeCategoryAndProductSection/HomeProductSection/HomeProductsSection";
+import ProductDetailsSection from "../views/components/HomeComponents/HomeCategoryAndProductSection/ProductDetailsSection/ProductDetailsSection";
 import HomeContactSection from "../views/components/HomeComponents/HomeContactSection/HomeContactSection";
 import HomeServiceSection from "../views/components/HomeComponents/HomeServiceSection/HomeServiceSection";
 import DashboardHome from "../views/components/dashboard/home/DashboardHome";
@@ -80,15 +81,17 @@ const router = createBrowserRouter([
         path: "/products",
         element: <HomeCategorySection></HomeCategorySection>,
       },
+      {
+        path: "/productsDetails/:productId",
+        element: <ProductDetailsSection></ProductDetailsSection>,
+      },
+
 
       {
         path: "/category/:categoryId",
         element: <HomeProductsSection></HomeProductsSection>,
       },
-      {
-        path: "/category/:categoryId",
-        element: <HomeProductsSection></HomeProductsSection>,
-      },
+
     ],
   },
   {
