@@ -2,6 +2,7 @@ import HomeCategorySection from "../views/components/HomeComponents/HomeCategory
 import HomeProductsSection from "../views/components/HomeComponents/HomeCategoryAndProductSection/HomeProductSection/HomeProductsSection";
 import HomeContactSection from "../views/components/HomeComponents/HomeContactSection/HomeContactSection";
 import HomeServiceSection from "../views/components/HomeComponents/HomeServiceSection/HomeServiceSection";
+import DashboardHome from "../views/components/dashboard/home/DashboardHome";
 import Login from "../views/pages/Authentication/Login/Login";
 import Signup from "../views/pages/Authentication/SignUP/Signup";
 import Cart from "../views/pages/Cart/Cart";
@@ -17,74 +18,85 @@ const { default: Home } = require("../views/pages/Home/Home");
 const { default: About } = require("../views/pages/About/About");
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <MainLayout></MainLayout>,
-        children: [
-            {
-                path: "/",
-                element: <Home></Home>
-            },
-            {
-                path: "/signup",
-                element: <Signup></Signup>
-            },
-            {
-                path: "/login",
-                element: <Login></Login>
-            },
-            {
-                path: "/services",
-                element: <HomeServiceSection></HomeServiceSection>
-            },
-            {
-                path: "/about",
-                element: <About></About>
-            },
-            {
-                path: "/contact",
-                element: <HomeContactSection></HomeContactSection>
-            },
+  {
+    path: "/*",
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: "/*",
+        element: <Home></Home>,
+      },
+      {
+        path: "/signup",
+        element: <Signup></Signup>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/services",
+        element: <HomeServiceSection></HomeServiceSection>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: <HomeContactSection></HomeContactSection>,
+      },
 
-            {
-                path: "/account",
-                element: <Profile></Profile>
-            },
-            {
-                path: "/checkout",
-                element: <CheckOut></CheckOut>
-            },
-            {
-                path: "/cart",
-                element: <Cart></Cart>
-            },
+      {
+        path: "/account",
+        element: <Profile></Profile>,
+      },
+      {
+        path: "/checkout",
+        element: <CheckOut></CheckOut>,
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>,
+      },
 
-            {
-                path: "/wishList",
-                element: <WishList></WishList>
-            },
-            {
-                path: "/contact",
-                element: <HomeContactSection></HomeContactSection>
-            },
-            {
-                path: "/termsAndConditions",
-                element: <TermsAndConditions></TermsAndConditions>
-            },
-            {
-                path: "/cookiesPolicy",
-                element: <CookiesPolicy></CookiesPolicy>
-            },
-            {
-                path: "/products",
-                element: <HomeCategorySection></HomeCategorySection>
-            },
+      {
+        path: "/wishList",
+        element: <WishList></WishList>,
+      },
+      {
+        path: "/contact",
+        element: <HomeContactSection></HomeContactSection>,
+      },
+      {
+        path: "/termsAndConditions",
+        element: <TermsAndConditions></TermsAndConditions>,
+      },
+      {
+        path: "/cookiesPolicy",
+        element: <CookiesPolicy></CookiesPolicy>,
+      },
+      {
+        path: "/products",
+        element: <HomeCategorySection></HomeCategorySection>,
+      },
 
-            {
-                path: "/category/:categoryId",
-                element: <HomeProductsSection></HomeProductsSection>,
-            },
-        ]
-    }
+      {
+        path: "/category/:categoryId",
+        element: <HomeProductsSection></HomeProductsSection>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard/*",
+    /*  element: <PrivateRoute> <DashboardLayout></DashboardLayout> </PrivateRoute>, */
+
+    children: [
+      {
+        path: "/dashboard/*",
+        element: <DashboardHome></DashboardHome>,
+      },
+    ],
+  },
 ]);
 export default router;
