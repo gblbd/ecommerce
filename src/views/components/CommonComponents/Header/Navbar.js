@@ -17,7 +17,7 @@ const Navbar = () => {
                 <div className=' d-lg-flex justify-content-lg-between justify-content-center py-2'>
                     <div className='col-lg-8 d-lg-flex  justify-content-lg-between  flex-md-row-reverse  '>
 
-                        <Link className=" d-flex justify-content-center  " href="#">
+                        <Link className=" d-flex justify-content-center" to="/">
                             <img className='shopLogo' src={LogoImage} alt="" />
                         </Link>
 
@@ -38,12 +38,16 @@ const Navbar = () => {
                                 <AiOutlineHome className=''></AiOutlineHome> <span className='ms-1'> Home</span>
                             </Link>
 
-                            <Link to="/account" className=" navBtnTop text-primary d-flex justify-content-center align-items-center mx-3" href="#">
+                            <Link to="/account" className=" navBtnTop text-primary d-flex justify-content-center align-items-center mx-2" href="#">
                                 <BiUser></BiUser> <span className='ms-1'> My Account</span>
                             </Link>
 
-                            <Link to="/wishList" className=" navBtnTop text-primary d-flex justify-content-center align-items-center">
+                            <Link to="/wishList" className=" navBtnTop text-primary d-flex justify-content-center align-items-center mx-2">
                                 <AiOutlineHeart></AiOutlineHeart><span className='ms-1'> Wish List</span>
+                            </Link>
+
+                            <Link to="/login" className=" navBtnTop text-primary d-flex justify-content-center align-items-center">
+                                <span className='ms-'>Login</span>
                             </Link>
 
                         </div>
