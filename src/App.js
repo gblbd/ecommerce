@@ -7,6 +7,7 @@ import Footer from "./views/components/CommonComponents/Footer/Footer";
 import Navbar from "./views/components/CommonComponents/Header/Navbar";
 import HomeCategorySection from "./views/components/HomeComponents/HomeCategoryAndProductSection/HomeCategorySection/HomeCategorySection";
 import HomeProductsSection from "./views/components/HomeComponents/HomeCategoryAndProductSection/HomeProductSection/HomeProductsSection";
+import ProductDetailsSection from "./views/components/HomeComponents/HomeCategoryAndProductSection/ProductDetailsSection/ProductDetailsSection";
 import HomeContactSection from "./views/components/HomeComponents/HomeContactSection/HomeContactSection";
 import HomeServiceSection from "./views/components/HomeComponents/HomeServiceSection/HomeServiceSection";
 import DashboardHome from "./views/components/dashboard/home/DashboardHome";
@@ -20,21 +21,16 @@ import Home from "./views/pages/Home/Home";
 import Profile from "./views/pages/Profile/Profile";
 import TermsAndConditions from "./views/pages/TermsAndConditions/TermsAndConditions";
 import WishList from "./views/pages/WishList/WishList";
-import ProductDetailsSection from "./views/components/HomeComponents/HomeCategoryAndProductSection/ProductDetailsSection/ProductDetailsSection";
-
 
 const MainLayout = ({ children }) => {
   return (
     <div className="container">
       <Navbar />
-      <div className=" min-vh-100">
-        {children}
-      </div>
+      <div className=" min-vh-100">{children}</div>
       <Footer />
     </div>
   );
 };
-
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -44,7 +40,6 @@ const DashboardLayout = ({ children }) => {
     </div>
   );
 };
-
 
 function App() {
   return (
@@ -133,12 +128,24 @@ function App() {
               }
               exact
             />
-            <Route path="/category/:categoryId"
-              element={<MainLayout> <HomeProductsSection /> </MainLayout>}
+            <Route
+              path="/category/:categoryId"
+              element={
+                <MainLayout>
+                  {" "}
+                  <HomeProductsSection />{" "}
+                </MainLayout>
+              }
               exact
             />
-            <Route path="/productsDetails/:productId"
-              element={<MainLayout> <ProductDetailsSection /> </MainLayout>}
+            <Route
+              path="/productsDetails/:productId"
+              element={
+                <MainLayout>
+                  {" "}
+                  <ProductDetailsSection />{" "}
+                </MainLayout>
+              }
               exact
             />
             <Route
