@@ -75,7 +75,10 @@ const ProductDisplay = ({ items }) => {
   };
 
   console.log("productList", productList);
-
+  const navigateToDetails = (id) => {
+    // Change the URL to the details page by manipulating window.location
+    window.location.href = `/productsDetails/${id}`;
+  };
   return (
     <div className="col-lg-10 mx-auto">
       <ToastContainer />
@@ -86,7 +89,10 @@ const ProductDisplay = ({ items }) => {
               <div className="" key={product._id}>
                 <div className=" mb-2">
                   <div className="">
-                    <div className="">
+                    <div
+                      className=""
+                      onClick={() => navigateToDetails(product._id)}
+                    >
                       <img
                         src={product.img}
                         alt={product.title}
